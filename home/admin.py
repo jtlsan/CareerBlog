@@ -1,4 +1,4 @@
 from django.contrib import admin
-from home.models import DevNews
+from home.models import Post
 # Register your models here.
-admin.site.register(DevNews)
+admin.site.register(Post)

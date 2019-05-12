@@ -7,7 +7,7 @@ categories = (
     ('Study', 'Study'),
     ('외부컨텐츠', '외부컨텐츠'),
 )
-class DevNews(models.Model):
+class Post(models.Model):
     title = models.CharField(max_length=30)
     category = models.CharField(max_length=10, choices=categories, default='Study')
     content = RichTextField()
