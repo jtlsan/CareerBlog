@@ -25,7 +25,13 @@ form p:first-of-type{
 #cancel_button {
     margin-left: 10px;
 }
-
+#buttons img{
+    width: 13px;
+    height: 13px;
+}
+#pencil_icon {
+    
+}
 
 form {
     overflow: auto;

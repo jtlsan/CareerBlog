@@ -1,73 +1,33 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Stylish" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo" rel="stylesheet">
-    <link href="{% static 'css/common.css' %}" type="text/css" rel="stylesheet">
+{% extends 'home/layout.html' %}
+
+{% block header %}
+    {% load static %}
     <link href="{% static 'css/post_list.css' %}" type="text/css" rel="stylesheet">
-    <script src="{% static 'js/jquery-3.4.0.js' %}"></script>
-    <script src="{% static 'js/common.js' %}"></script>
     <script src="{% static 'js/post_list.js' %}"></script>
     <title>Mountain's 개발 블로그</title>
-</head>
-<body>
-    <header>
-        <p>Mountain's 개발 블로그</p>          
-            <div id="nav-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-    </header>
-    
-    <nav>
-        <ul id="nav-list">
-            <li><a href=#><h3>Home</h3></a></li>
-            <li><a href=#><h3>Projects</h3></a></li>
-            <li><a href=#><h3>Study</h3></a></li>
-            <li><a href=#><h3>외부 컨텐츠</h3></a></li>
-            <li><a href=#><h3>About</h3></a></li>
-        </ul>
-    </nav>
+{% endblock %}
+{% block content %}
     <div id="page_title">
         <h2>전체 포스팅</h2>
-        <p>10개의 글</p>
+        <p>{{ posts.count }}개의 글</p>
+        <a id="post_button" href="{% url 'home:post_create' %}">
+            <img src="{% static 'images/pencil2.svg' %}" id="pencil_icon">
+            글 쓰기
+        </a>
     </div>
     <div class="content"> 
         <section>
             <ul class="grid-post">
-                <li>
-                    <a href="#">
-                        <span id="category">Study</span>
-                    </a>
-                    <a href="#">
-                        <h2 id="post-title">C언어 1주차 : printf / scanf</h2>
-                    </a>
-                    <p id="date">2019.05.08</p>
-                    
+                {% for post in posts %}
+                    <li>
+                        <p id="category">{{ post.category }}</p>
+                        <a href="{{ post.get_absolute_url }}">
+                            <h2 id="post-title">{{ post.title }}</h2>
+                        </a>
+                        <p id="date">{{ post.created_date|date:"Y.m.d" }}</p>
                 </li>
-                <li>
-                    <a href="#">
-                        <span id="category">외부컨텐츠</span>
-                    </a>
-                    <a href="#">
-                        <h2 id="post-title">지금 당장 프로젝트를 시작하라 동해물과 백두산이 마르고 닳도록</h2>
-                    </a>
-                        <p id="date">2019.05.08</p>
-                    
-                </li>
+                    {% endfor %}
             </ul> 
         </section>
     </div>
-    <footer>
-       <p>Copyright ⓒ Kim San</p>
-    </footer>
-        
-
-    
-</body>
-</html>
+{% endblock %}

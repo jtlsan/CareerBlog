@@ -1,0 +1,28 @@
+{% extends 'home/layout.html' %}
+{% block header %}
+    {% load static %}
+    <link href="{% static 'css/post_detail.css' %}" type="text/css" rel="stylesheet">
+
+{% endblock %}
+{% block content %}
+    <section id="post_detail">
+        <div id="post_title">
+            <p id="category">{{ post.category }}</p>
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.created_date|date:"Y.m.d" }}</p>
+        </div>
+        <div id="post_content">
+            {{ post.content|safe }}
+        </div>
+        <div id="buttons">
+            <a id="delete_button" href="#">
+                <img src="{% static 'images/delete.svg' %}">
+                삭제
+            </a>
+            <a id="edit_button" href="{% url 'home:post_update' slug_url=post.slug %}">
+                <img src="{% static 'images/pencil2.svg' %}">
+                수정
+            </a>
+        </div>
+    </section>
+{% endblock %}
