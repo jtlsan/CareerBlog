@@ -7,7 +7,7 @@ from django.urls import reverse
 categories = (
     ('Projects', 'Projects'),
     ('Study', 'Study'),
-    ('외부컨텐츠', '외부컨텐츠'),
+    ('Article', 'Article'),
 )
 class Post(models.Model):
     title = models.CharField(max_length=30)
@@ -31,4 +31,6 @@ class Post(models.Model):
         self.slug = slugify(self.title, allow_unicode=True)
         super().save(args, kwargs)
     
+
+
     

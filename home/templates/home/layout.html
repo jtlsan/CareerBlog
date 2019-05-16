@@ -10,6 +10,7 @@
     <link href="{% static 'css/common.css' %}" type="text/css" rel="stylesheet">
     <script src="{% static 'js/jquery-3.4.0.js' %}"></script>
     <script src="{% static 'js/common.js' %}"></script>
+    <title>Mountain's 개발 블로그</title>
     {% block header %}
     {% endblock %}  
 </head>
@@ -25,9 +26,9 @@
     <nav>
         <ul id="nav-list">
             <li><a href="{% url 'home:main' %}"><h3>Home</h3></a></li>
-            <li><a href=#><h3>Projects</h3></a></li>
-            <li><a href=#><h3>Study</h3></a></li>
-            <li><a href=#><h3>외부 컨텐츠</h3></a></li>
+            <li><a href="{% url 'home:projects' %}"><h3>Projects</h3></a></li>
+            <li><a href="{% url 'home:study' %}"><h3>Study</h3></a></li>
+            <li><a href="{% url 'home:articles' %}"><h3>Articles</h3></a></li>
             <li><a href=#><h3>About</h3></a></li>
         </ul>
     </nav>

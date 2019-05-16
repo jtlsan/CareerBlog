@@ -1,12 +1,42 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from home.models import Post
-from home.forms import PostForm
+from home.forms import PostForm, LoginForm
 from django.http import HttpResponse
+from django.contrib.auth.models import User
+from django.contrib.auth import login, authenticate
 # Create your views here.
 
 def home(request):
     posts = Post.objects.all()
-    return render(request, "home/home.html", {'posts': posts})
+    title = "전체 포스팅"
+    return render(request, "home/home.html", {
+        'posts': posts,
+        "title": title,
+        })
+
+def projects(request):
+    posts = Post.objects.all().filter(category="Projects")
+    title = "Projects"
+    return render(request, "home/home.html", {
+        'posts': posts,
+        "title": title,
+    })
+
+def study(request):
+    posts = Post.objects.all().filter(category="Study")
+    title = "Study"
+    return render(request, "home/home.html", {
+        'posts': posts,
+        'title': title,
+    })
+
+def articles(request):
+    posts = Post.objects.all().filter(category="Article")
+    title = "Articles"
+    return render(request, "home/home.html", {
+        'posts': posts,
+        'title': title,
+    })
 
 def post_create(request):
     if request.method == "POST":
@@ -36,3 +66,9 @@ def post_update(request, slug_url):
     else :
         form = PostForm(instance=post)
         return render(request, "home/post_create.html", {'form': form})
+
+def post_delete(request, slug_url):
+    post = get_object_or_404(Post, slug=slug_url)
+    post.delete()
+    return redirect("home:main")
+

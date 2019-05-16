@@ -1,0 +1,22 @@
+section {
+    display: block;
+
+    padding: px 0 30px;
+}
+body {
+    overflow: hidden;
+}
+h1 {
+    text-align: center;
+}
+input.login_input {
+    display: block;
+    margin: 20px auto;
+    border: none;
+    border-bottom: 2px solid #C0DEF9;
+    width: 90%;
+}
+input.login_input:focus {
+    outline: none;
+    
+}

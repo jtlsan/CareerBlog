@@ -2,7 +2,7 @@
 {% block header %}
     {% load static %}
     <link href="{% static 'css/post_detail.css' %}" type="text/css" rel="stylesheet">
-
+    <script src="{% static 'js/post_detail.js' %}"></script>
 {% endblock %}
 {% block content %}
     <section id="post_detail">
@@ -15,7 +15,7 @@
             {{ post.content|safe }}
         </div>
         <div id="buttons">
-            <a id="delete_button" href="#">
+            <a id="delete_button" href="{% url 'home:post_delete' slug_url=post.slug %}">
                 <img src="{% static 'images/delete.svg' %}">
                 삭제
             </a>
