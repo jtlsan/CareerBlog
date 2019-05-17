@@ -14,7 +14,7 @@ section#post_detail {
     border-radius : 5px;
 }
 #post_title h2{
-    margin: 0;
+    margin: 5px 0 0;
 }
 #post_title p{
     text-align: right;

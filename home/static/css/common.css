@@ -100,10 +100,6 @@ nav.open {
     width: 170px;
     right: 0;
     height: 100%;
-    /*
-    background: linear-gradient(to bottom, #062B4B, gray);
-    background-color: #FAFAFA;
-    */
     background-color: rgba(254, 254, 254, 0.95);
     z-index: 100;
     position: fixed;
@@ -116,10 +112,6 @@ nav {
     width: 170px;
     right: -170px;
     height: 100%;
-    /*
-    background: linear-gradient(to bottom, #062B4B, gray);
-    background-color: #FAFAFA;
-    */
     background-color: rgba(254, 254, 254, 0.95);
     z-index: 100;
     position: fixed;
@@ -168,4 +160,26 @@ footer {
 }
 footer p{
     line-height: 40px;
+}
+#login_btn {
+    display: block;
+    position: absolute;
+    width: 100%;
+    bottom: 10%;
+    left: 30%;
+}
+#login_a {
+    text-align: center;
+}
+#login_a p {
+    display: inline-block;
+    font-size: 1em;
+    color: #062B4B;
+}
+#login_a img{
+    width: 15px;
+    height: 15px;
+    margin: auto;
+    display: inline-block;
+    bottom: 0;
 }
