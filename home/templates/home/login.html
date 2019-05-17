@@ -12,7 +12,6 @@
         
         <form method="POST" action="">
             {% csrf_token %}
-            {% if not user.is_authenticated %}
             <div class="login_form">
                 <input class="login_input" id="{{ form.username.id_for_label }}" maxlength="15"
                 name="{{ form.username.html_name }}" type="text" placeholder="ID" autofocus required/>
@@ -21,11 +20,9 @@
                 <input class="login_input" id="{{ form.password.id_for_label }}" maxlength="120"
                 name="{{ form.password.html_name }}" type="password" placeholder="password" autofocus required/>
             </div>
-            <input type="submit" class="login_btn" value="로그인">
-            {% endif %}
-            <a href="{% url 'home:main' %}">
-                <button type="button" class="cancel_btn">돌아가기</button>
-            </a>
+            <div id="btns">
+                <input type="submit" class="login_btn" value="Log in">
+            </div>
             <input type="hidden" name="text" value="">
         </form>
     </section>

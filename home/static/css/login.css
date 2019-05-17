@@ -1,10 +1,10 @@
 section {
     display: block;
 
-    padding: px 0 30px;
+    padding: 50px 30px;
 }
 body {
-    overflow: hidden;
+    margin-top: 40px;
 }
 h1 {
     text-align: center;
@@ -19,4 +19,28 @@ input.login_input {
 input.login_input:focus {
     outline: none;
     
+}
+.btns {
+    display: block;
+    margin: auto;
+}
+.login_btn {
+    margin: 50px auto 10px;
+    display: block;
+    background: none;
+    border: none;
+    width: 70%;
+    height: 30px;
+    background-color: #062B4B;  /* #8CFC71 */
+    color: white;
+    border-radius: 50px;
+    letter-spacing: 0.1em;
+}
+p {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+a {
+    text-decoration: none;
 }
