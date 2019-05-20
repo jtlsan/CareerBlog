@@ -24,12 +24,14 @@
         <div id="title">
             <div id="title-box">
                 <h2>MOUNTAIN's</h2>
-                <h3>dev Blog</h3>
+                <h3>Develop Blog</h3>
             </div>
         </div>
         {% else %}
-            <h2>{{ title }}</h2>
-            <p>{{ post_count }}개의 글</p>
+            <div id="list_title_box">
+                <h2 id="list_title">{{ title }}</h2>
+                <p>{{ post_count }}개의 포스트</p>
+            </div>
         {% endif %}
 
     </div>

@@ -4,26 +4,29 @@
     <link href="{% static 'css/login.css' %}" type="text/css" rel="stylesheet">
 {% endblock %}
 {% block content %}
-    <section>
-        <h1>Log in</h1>
-        {% if form.errors %}
-            <p>올바르지 않은 ID나 비밀번호입니다.</p>
-        {% endif %}
-        
-        <form method="POST" action="">
-            {% csrf_token %}
-            <div class="login_form">
-                <input class="login_input" id="{{ form.username.id_for_label }}" maxlength="15"
-                name="{{ form.username.html_name }}" type="text" placeholder="ID" autofocus required/>
-            </div>
-            <div class="login_form">
-                <input class="login_input" id="{{ form.password.id_for_label }}" maxlength="120"
-                name="{{ form.password.html_name }}" type="password" placeholder="password" autofocus required/>
-            </div>
-            <div id="btns">
-                <input type="submit" class="login_btn" value="Log in">
-            </div>
-            <input type="hidden" name="text" value="">
-        </form>
-    </section>
+    <div class=wrapper>
+        <section>
+            <h1>Log in</h1>
+            {% if form.errors %}
+                <p>올바르지 않은 ID나 비밀번호입니다.</p>
+            {% endif %}
+            
+            <form method="POST" action="" autocomplete="off">
+                {% csrf_token %}
+                <div class="login_form">
+                    <input class="login_input" id="{{ form.username.id_for_label }}" maxlength="15"
+                    name="{{ form.username.html_name }}" type="text" placeholder="ID" autofocus required/>
+                </div>
+                <div class="login_form">
+                    <input class="login_input" id="{{ form.password.id_for_label }}" maxlength="120"
+                    name="{{ form.password.html_name }}" type="password" placeholder="password" autofocus required/>
+                </div>
+                <div id="btns">
+                    <input type="submit" class="login_btn" value="Log in">
+                </div>
+                <input type="hidden" name="text" value="">
+            </form>
+        </section>
+
+    </div>
 {% endblock %}

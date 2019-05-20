@@ -1,12 +1,10 @@
-section#post_detail {
-    
-}
+
 #post_title {
     box-sizing: border-box;
     margin: 70px auto 0;
     position: relative;
     clear: both;
-    background-color: #F8F8F8;
+    background-color: #F0F0F0;
     height: auto;
     width: 96%;
     padding: 10px 20px 5px;

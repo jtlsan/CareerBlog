@@ -9,4 +9,5 @@
             location.href = link;
         })
     });
+
 }(window, jQuery));

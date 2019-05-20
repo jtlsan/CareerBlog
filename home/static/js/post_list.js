@@ -33,6 +33,7 @@
         $.categoryColor();
         $.listCenter();
         $(window).on("resize", $.listCenter)
+        
         /*
         $(".unwraped:nth-child(1), .unwraped:nth-child(2), .unwraped:nth-child(3)")
         .wrapAll("<div class='3n-list-container' />")

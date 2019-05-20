@@ -5,6 +5,7 @@ html, body {
     height: 100%;
     font-family: 'Stylish', sans-serif;
 }
+
 .wrapper {
     height: auto;
     min-height: 100%;
@@ -33,7 +34,7 @@ header a {
     margin: auto;
     height: auto;*/
     position: relative;
-    margin-left: 5px;
+    margin-left: 10px;
     line-height: 100%; 
     text-align: center;
     display: block;
@@ -139,22 +140,44 @@ nav {
 }
 #nav-list {
     list-style-type: none;
-}
-#nav-list{
     padding: 0;
 }
+
 #nav-list a, #nav-list a:visited{
     text-decoration: none;
 }
 #nav-list a {
     text-align: center;
     margin: auto;
+    font-size: 1.3em;
 }
 #nav-list a h3 {
     color: #062B4B
 }
 #nav-list li {
     margin: auto;
+}
+#links {
+    display: block;
+    width: 100%;
+    bottom: 60px;
+    position: absolute;
+
+}
+#links a {
+    width: 30px;
+    height: 30px;
+    margin: auto 5px;
+}
+#links img {
+    width: 30px;
+    height: 30px;
+}
+#links a:nth-child(1){
+    margin-left: 27px;
+}
+#links a:nth-child(3) {
+    margin-right: 25px;
 }
 
 .content {
@@ -169,8 +192,7 @@ footer {
     width: 100%;
     height: 40px;
     position: relative;
-    
-    background-color: #eaeaea;
+    background-color: #d0d0d0;
     text-align: center;
 
 }
@@ -178,11 +200,12 @@ footer p{
     margin-top: 0;
     line-height: 40px;
 }
+
 #login_btn {
     display: block;
     position: absolute;
     width: 100%;
-    bottom: 60px;
+    bottom: 100px;
     left: 30%;
 }
 #login_a {

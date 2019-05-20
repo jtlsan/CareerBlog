@@ -1,18 +1,25 @@
 .content {
     background-color: #FBFBFB;
-    margin: 5px 0 0 0;
+    margin: 0 0 0 0;
     position: relative;
 }
 #page_title {
     position: relative;
     clear: both;
-    margin-top: 60px;
-    background-color: #F8F8F8;
+    margin-top: 57px;
+    background-color: white;
     height: auto;
     min-height: 100px;
-    width: 100%;
-    border-top: 3px solid white;
+    width: 100%; 
     font-family: 'Nanum Myeongjo', serif;
+}
+#list_title_box {
+    padding: 3px;
+    width: 100%;
+    height: 100%;
+    min-height: 100px;
+    background-color: #474747;
+    box-sizing: border-box;
 }
 #main-poster {
     width: 100%;
@@ -39,21 +46,30 @@
     text-align: center;
     line-height: 30px;
     color: #062B4B;
-    
+    text-indent: 10px;
+    margin-bottom: 7px;
+    width: 90%;
+    margin: 15px auto 0;
 }
-#page_title h2{
+#title-box h3 {
+    margin-top: 5px;
+}
+#page_title h2#list_title{
     text-indent: 10px;
     margin-bottom: 7px;
     width: 90%;
     margin: 15px auto 7px;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 2px;
 }
 #page_title p{
     margin-top: 7px;
     text-indent: 60px;
-    width: 40%;
+    width: 70%;
     display: inline-block;
     margin: 10px auto 0;
     margin-left: 5%;
+    color: rgba(255, 255, 255, 0.8);
 }
 .btn {
     display: inline-block;
@@ -80,6 +96,7 @@
     height: 13px;
 }
 .grid-post {
+    margin-top: 5px;
     list-style-type: none;
     padding: 0;
     display: block;
@@ -92,9 +109,6 @@
     margin: 10px auto;
     height: auto;
     background-color: white;
-    /*
-    background-color: rgba(84, 173, 251, 0.5);
-    */
     padding: 20px !important;
     border-radius: 20px;
     box-shadow: 0px 0px 4px;
@@ -104,10 +118,13 @@
     transition: 0.5s ease-in-out;
     height: auto;
 }
+.infinite-item:hover {
+    transform: translateY(-10px);
+}
 a#detail_link {
     width: 100%;
     height: 100%;
-    color: #062B4B;
+    color: black;
     text-decoration: none;
     
 }
@@ -139,6 +156,7 @@ p.Articles {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     text-align: left;
+    color: black;
     /*
     width: 190px;
     line-height: 30px;

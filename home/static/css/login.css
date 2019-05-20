@@ -44,3 +44,20 @@ p {
 a {
     text-decoration: none;
 }
+@media only screen and (min-width: 768px){
+    h1 {
+        font-size: 2.3em;
+    }
+    input.login_input {
+        width: 500px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        font-size: 1em;
+    }
+    .login_btn {
+        width: 400px;
+        height: 50px;
+        font-size: 1.2em;
+    }
+
+}
