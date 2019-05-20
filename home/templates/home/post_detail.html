@@ -5,26 +5,29 @@
     <script src="{% static 'js/post_detail.js' %}"></script>
 {% endblock %}
 {% block content %}
-    <section id="post_detail">
-        <div id="post_title">
-            <p id="category">{{ post.category }}</p>
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.created_date|date:"Y.m.d" }}</p>
-        </div>
-        <div id="post_content">
-            {{ post.content|safe }}
-        </div>
-        {% if user.is_authenticated %}
-        <div id="buttons">
-            <a id="delete_button" href="{% url 'home:post_delete' slug_url=post.slug %}">
-                <img src="{% static 'images/delete.svg' %}">
-                삭제
-            </a>
-            <a id="edit_button" href="{% url 'home:post_update' slug_url=post.slug %}">
-                <img src="{% static 'images/pencil2.svg' %}">
-                수정
-            </a>
-        </div>
-        {% endif %}
-    </section>
+    <div class="wrapper">
+        <section id="post_detail">
+            <div id="post_title">
+                <p id="category">{{ post.category }}</p>
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.created_date|date:"Y.m.d" }}</p>
+            </div>
+            <div id="post_content">
+                {{ post.content|safe }}
+            </div>
+            {% if user.is_authenticated %}
+            <div id="buttons">
+                <a id="delete_button" href="{% url 'home:post_delete' slug_url=post.slug %}">
+                    <img src="{% static 'images/delete.svg' %}">
+                    삭제
+                </a>
+                <a id="edit_button" href="{% url 'home:post_update' slug_url=post.slug %}">
+                    <img src="{% static 'images/pencil2.svg' %}">
+                    수정
+                </a>
+            </div>
+            {% endif %}
+        </section>
+
+    </div>
 {% endblock %}

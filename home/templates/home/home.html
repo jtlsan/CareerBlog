@@ -15,7 +15,11 @@
     <title>Mountain's 개발 블로그</title>
 {% endblock %}
 {% block content %}
+<div class="wrapper">
     <div id="page_title">
+        <!--
+            <img src="{% static 'images/fixed2.jpg' %}">
+        -->
         <h2>{{ title }}</h2>
         <p>{{ post_count }}개의 글</p>
         {% if user.is_authenticated %}
@@ -27,18 +31,18 @@
     </div>
     <div class="content"> 
         <section>
-            <ul class="infinite-container grid-post">       
+            <ul class="infinite-container grid-post">
                     {% for post in post_list %}
-                        <div class="infinite-item">
+                        <div class="infinite-item unwraped">
                             <li class="list-raw">
                                 <p id="category">{{ post.category }}</p>
                                 <a href="{{ post.get_absolute_url }}" id="detail_link">
-                                    <h2 id="post-title">{{ post.title }}</h2>
+                                    <h3 id="post-title">{{ post.title }}</h3>
                                 </a>
                                 <p id="date">{{ post.created_date|date:"Y.m.d" }}</p>
                             </li>
                         </div>
-                    {% endfor %}              
+                    {% endfor %}   
             </ul>      
             {% if post_list.has_next %}
                 <a class="infinite-more-link" href="?page={{ post_list.next_page_number }}" style="visibility: hidden">More</a>
@@ -60,6 +64,7 @@
             }
         });
     </script>
+</div>
 
 
 {% endblock %}

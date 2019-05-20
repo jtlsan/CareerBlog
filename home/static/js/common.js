@@ -4,5 +4,9 @@
             $(this).toggleClass("open");
             $("nav").toggleClass("open");
         });
+        $("header img").on("click", function() {
+            var link = $("header a").attr("href");
+            location.href = link;
+        })
     });
 }(window, jQuery));

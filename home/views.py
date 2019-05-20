@@ -13,7 +13,7 @@ def home(request):
     posts = Post.objects.all()
     title = "전체 포스팅"
     page = request.GET.get('page', 1)
-    paginator = Paginator(posts, 5)
+    paginator = Paginator(posts, 3)
     post_count = posts.count()
     try:
         post_list = paginator.page(page)
@@ -31,7 +31,7 @@ def projects(request):
     posts = Post.objects.all().filter(category="Projects")
     title = "Projects"
     page = request.GET.get('page', 1)
-    paginator = Paginator(posts, 5)
+    paginator = Paginator(posts, 3)
     post_count = posts.count()
     try:
         post_list = paginator.page(page)
@@ -49,7 +49,7 @@ def study(request):
     posts = Post.objects.all().filter(category="Study")
     title = "Study"
     page = request.GET.get('page', 1)
-    paginator = Paginator(posts, 5)
+    paginator = Paginator(posts, 3)
     post_count = posts.count()
     try:
         post_list = paginator.page(page)
@@ -67,7 +67,7 @@ def articles(request):
     posts = Post.objects.all().filter(category="Article")
     title = "Articles"
     page = request.GET.get('page', 1)
-    paginator = Paginator(posts, 5)
+    paginator = Paginator(posts, 3)
     post_count = posts.count()
     try :
         post_list = paginator.page(page)

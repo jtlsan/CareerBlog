@@ -3,7 +3,7 @@ section#post_detail {
 }
 #post_title {
     box-sizing: border-box;
-    margin:50px auto 0;
+    margin: 70px auto 0;
     position: relative;
     clear: both;
     background-color: #F8F8F8;
@@ -65,4 +65,13 @@ section#post_detail {
 #buttons img{
     width: 13px;
     height: 13px;
+}
+@media only screen and (min-width:1024px) {
+    .wrapper {
+        width: 1024px;
+        display:block;
+        margin: auto;
+    }
+    #post_title {
+    }
 }
