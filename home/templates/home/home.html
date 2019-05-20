@@ -18,19 +18,31 @@
 <div class="wrapper">
     <div id="page_title">
         <!--
-            <img src="{% static 'images/fixed2.jpg' %}">
         -->
-        <h2>{{ title }}</h2>
-        <p>{{ post_count }}개의 글</p>
-        {% if user.is_authenticated %}
-            <a id="post_button" href="{% url 'home:post_create' %}">
-                <img src="{% static 'images/pencil2.svg' %}" id="pencil_icon">
-                글 쓰기
-            </a>
+        {% if is_home %}
+        <img src="{% static 'images/fixed.jpg' %}" id="main-poster">
+        <div id="title">
+            <div id="title-box">
+                <h2>MOUNTAIN's</h2>
+                <h3>dev Blog</h3>
+            </div>
+        </div>
+        {% else %}
+            <h2>{{ title }}</h2>
+            <p>{{ post_count }}개의 글</p>
         {% endif %}
+
     </div>
     <div class="content"> 
         <section>
+                {% if user.is_authenticated %}
+                    <div class="btn">
+                        <a id="post_button" href="{% url 'home:post_create' %}">
+                            <img src="{% static 'images/pencil2.svg' %}" id="pencil_icon">
+                            글 쓰기
+                        </a>
+                    </div>
+                {% endif %}
             <ul class="infinite-container grid-post">
                     {% for post in post_list %}
                         <div class="infinite-item unwraped">

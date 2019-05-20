@@ -15,6 +15,7 @@ def home(request):
     page = request.GET.get('page', 1)
     paginator = Paginator(posts, 3)
     post_count = posts.count()
+    is_home = True
     try:
         post_list = paginator.page(page)
     except PageNotAnInteger:   
@@ -24,7 +25,8 @@ def home(request):
     return render(request, "home/home.html", {
         'post_count': post_count,
         "title": title,
-        'post_list': post_list
+        'post_list': post_list,
+        'is_home': is_home,
         })
 
 def projects(request):
