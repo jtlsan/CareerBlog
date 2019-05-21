@@ -24,21 +24,14 @@
             $(".infinite-item:nth-child(3n+1)").css("margin-left", margin);
             $(".infinite-item:nth-child(3n)").css("margin-right", margin);
         }
-        else {
-            
-       
-        }
     }
     $(function() {
         $.categoryColor();
         $.listCenter();
         $(window).on("resize", $.listCenter)
-        
-        /*
-        $(".unwraped:nth-child(1), .unwraped:nth-child(2), .unwraped:nth-child(3)")
-        .wrapAll("<div class='3n-list-container' />")
-        .removeClass("unwraped");
-        */
+        $(document).on("mouseover focus", ".infinite-item", function() {
+            $(".infinite-item").css("cursor", "pointer");
+        })
     })
     $(document).on('click', ".grid-post li", function() {
         var next_url = $(this).children().eq(1).attr("href");

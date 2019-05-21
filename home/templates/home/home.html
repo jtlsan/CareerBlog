@@ -17,8 +17,6 @@
 {% block content %}
 <div class="wrapper">
     <div id="page_title">
-        <!--
-        -->
         {% if is_home %}
         <img src="{% static 'images/fixed.jpg' %}" id="main-poster">
         <div id="title">
@@ -30,7 +28,7 @@
         {% else %}
             <div id="list_title_box">
                 <h2 id="list_title">{{ title }}</h2>
-                <p>{{ post_count }}개의 포스트</p>
+                <p>{{ sub_category }} | {{ post_count }}개의 포스트</p>
             </div>
         {% endif %}
 

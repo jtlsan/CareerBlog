@@ -9,9 +9,17 @@ categories = (
     ('Study', 'Study'),
     ('Article', 'Article'),
 )
+sub_categories = (
+    ('C언어', 'C언어'),
+    ('Django', 'Django'),
+    ('Front-End', 'Front-End'),
+    ('IT', 'IT'),
+    ('시사', '시사'),
+)
 class Post(models.Model):
     title = models.CharField(max_length=30)
-    category = models.CharField(max_length=10, choices=categories, default='Study')
+    category = models.CharField(max_length=20, choices=categories, default='Study')
+    sub_category = models.CharField(max_length=20, choices=sub_categories, default='IT')
     content = RichTextField()
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)

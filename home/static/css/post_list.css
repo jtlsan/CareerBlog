@@ -50,6 +50,10 @@
     margin-bottom: 7px;
     width: 90%;
     margin: 15px auto 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 #title-box h3 {
     margin-top: 5px;

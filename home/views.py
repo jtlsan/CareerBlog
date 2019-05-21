@@ -65,6 +65,66 @@ def study(request):
         'post_list': post_list,
     })
 
+def study_c(request):
+    posts = Post.objects.all().filter(category="Study").filter(sub_category="C언어")
+    title = "Study"
+    sub_category = "C 언어"
+    page = request.GET.get('page', 1)
+    paginator = Paginator(posts, 3)
+    post_count = posts.count()
+    try:
+        post_list = paginator.page(page)
+    except PageNotAnInteger:
+        post_list = paginator.page(1)
+    except EmptyPage :
+        post_list = paginator.page(paginator.num_pages)
+    return render(request, "home/home.html", {
+        'post_count': post_count,
+        'title': title,
+        'post_list': post_list,
+        'sub_category': sub_category,
+    })
+
+def study_django(request):
+    posts = Post.objects.all().filter(category="Study").filter(sub_category="Django")
+    title = "Study"
+    sub_category = "Django"
+    page = request.GET.get('page', 1)
+    paginator = Paginator(posts, 3)
+    post_count = posts.count()
+    try:
+        post_list = paginator.page(page)
+    except PageNotAnInteger:
+        post_list = paginator.page(1)
+    except EmptyPage :
+        post_list = paginator.page(paginator.num_pages)
+    return render(request, "home/home.html", {
+        'post_count': post_count,
+        'title': title,
+        'post_list': post_list,
+        'sub_category': sub_category,
+    })
+
+def study_front(request):
+    posts = Post.objects.all().filter(category="Study").filter(sub_category="Front-End")
+    title = "Study"
+    sub_category = "Front-End"
+    page = request.GET.get('page', 1)
+    paginator = Paginator(posts, 3)
+    post_count = posts.count()
+    try:
+        post_list = paginator.page(page)
+    except PageNotAnInteger:
+        post_list = paginator.page(1)
+    except EmptyPage :
+        post_list = paginator.page(paginator.num_pages)
+    return render(request, "home/home.html", {
+        'post_count': post_count,
+        'title': title,
+        'post_list': post_list,
+        'sub_category': sub_category,
+    })
+
 def articles(request):
     posts = Post.objects.all().filter(category="Article")
     title = "Articles"
@@ -81,6 +141,46 @@ def articles(request):
         'post_count': post_count,
         'title': title,
         'post_list': post_list,
+    })
+
+def articles_it(request):
+    posts = Post.objects.all().filter(category="Article").filter(sub_category="IT")
+    title = "Articles"
+    sub_category = "IT"
+    page = request.GET.get('page', 1)
+    paginator = Paginator(posts, 3)
+    post_count = posts.count()
+    try:
+        post_list = paginator.page(page)
+    except PageNotAnInteger:
+        post_list = paginator.page(1)
+    except EmptyPage :
+        post_list = paginator.page(paginator.num_pages)
+    return render(request, "home/home.html", {
+        'post_count': post_count,
+        'title': title,
+        'post_list': post_list,
+        'sub_category': sub_category,
+    })
+
+def articles_affair(request):
+    posts = Post.objects.all().filter(category="Article").filter(sub_category="시사")
+    title = "Articles"
+    sub_category = "시사"
+    page = request.GET.get('page', 1)
+    paginator = Paginator(posts, 3)
+    post_count = posts.count()
+    try:
+        post_list = paginator.page(page)
+    except PageNotAnInteger:
+        post_list = paginator.page(1)
+    except EmptyPage :
+        post_list = paginator.page(paginator.num_pages)
+    return render(request, "home/home.html", {
+        'post_count': post_count,
+        'title': title,
+        'post_list': post_list,
+        'sub_category': sub_category,
     })
 
 @login_required

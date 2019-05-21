@@ -28,8 +28,21 @@
         <ul id="nav-list">
             <li><a href="{% url 'home:main' %}"><h3>Home</h3></a></li>
             <li><a href="{% url 'home:projects' %}"><h3>Projects</h3></a></li>
-            <li><a href="{% url 'home:study' %}"><h3>Study</h3></a></li>
-            <li><a href="{% url 'home:articles' %}"><h3>Articles</h3></a></li>
+            <li>
+                <a href="{% url 'home:study' %}"><h3>Study</h3></a>
+                <ul class="category-list">
+                    <li><a href="{% url 'home:study_c' %}"><p>C언어</p></a></li>
+                    <li><a href="{% url 'home:study_front' %}"><p>Front-End</p></a></li>
+                    <li><a href="{% url 'home:study_django' %}"><p>Django</p></a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="{% url 'home:articles' %}"><h3>Articles</h3></a>
+                <ul class="category-list">
+                    <li><a href="{% url 'home:articles_it' %}"><p>IT</p></a></li>
+                    <li><a href="{% url 'home:articles_affair' %}"><p>시사</p></a></li>
+                </ul>
+            </li>
             <li><a href=#><h3>About</h3></a></li>
             <li id="links">
                 <a href="https://www.facebook.com/san.kim.9849"><img src="{% static 'images/facebook.png' %}" /></a>
@@ -48,7 +61,7 @@
                     <p>Logout</p>
                     </a>
                 {% endif %}
-        </li>
+            </li>
         </ul>
     </nav>
     {% block content %}

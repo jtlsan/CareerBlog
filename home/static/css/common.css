@@ -157,6 +157,21 @@ nav {
 #nav-list li {
     margin: auto;
 }
+ul.category-list {
+    list-style-type: none;
+    padding: 0;
+    display: hidden;
+}
+ul.category-list li {
+    margin: auto;
+}
+ul.category-list a, .category-list a:visited {
+    text-decoration: none;
+}
+ul.category-list p {
+    color: black;
+    font-size: 0.8em;
+}
 #links {
     display: block;
     width: 100%;
@@ -206,10 +221,10 @@ footer p{
     position: absolute;
     width: 100%;
     bottom: 100px;
-    left: 30%;
 }
-#login_a {
+a#login_a {
     text-align: center;
+    margin-left: 50px;
 }
 #login_a p {
     display: inline-block;
