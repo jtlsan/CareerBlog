@@ -44,23 +44,23 @@
                 </ul>
             </li>
             <li><a href=#><h3>About</h3></a></li>
+            <li id="login_btn">
+                {% if not user.is_authenticated %}
+                <a href="{% url 'home:login' %}" id="login_a">
+                    <img src="{% static 'images/switch.png' %}" />
+                    <p>Login</p>
+                </a>
+                {% else %}
+                <a href="{% url 'home:logout' %}" id="login_a">
+                    <img src="{% static 'images/switch-off.png' %}" />
+                    <p>Logout</p>
+                </a>
+                {% endif %}
+            </li>
             <li id="links">
                 <a href="https://www.facebook.com/san.kim.9849"><img src="{% static 'images/facebook.png' %}" /></a>
                 <a href="https://www.instagram.com/san__kim/?hl=ko"><img src="{% static 'images/instagram.png' %}" /></a>
                 <a href="https://github.com/jtlsan"><img src="{% static 'images/github.png' %}" /></a>      
-            </li>
-            <li id="login_btn">
-                {% if not user.is_authenticated %}
-                    <a href="{% url 'home:login' %}" id="login_a">
-                    <img src="{% static 'images/switch.png' %}" />
-                    <p>Login</p>
-                    </a>
-                {% else %}
-                    <a href="{% url 'home:logout' %}" id="login_a">
-                    <img src="{% static 'images/switch-off.png' %}" />
-                    <p>Logout</p>
-                    </a>
-                {% endif %}
             </li>
         </ul>
     </nav>

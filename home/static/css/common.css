@@ -141,6 +141,11 @@ nav {
 #nav-list {
     list-style-type: none;
     padding: 0;
+    overflow: auto;
+    position: relative;
+    min-height: 100%;
+    height: auto;
+    margin-top: 0;
 }
 
 #nav-list a, #nav-list a:visited{
@@ -177,7 +182,6 @@ ul.category-list p {
     width: 100%;
     bottom: 60px;
     position: absolute;
-
 }
 #links a {
     width: 30px;
@@ -238,8 +242,13 @@ a#login_a {
     display: inline-block;
     bottom: 0;
 }
-@media only screen and (min-width: 768px) {
-    header {
-        
+@media only screen and (max-height: 520px) {
+    #links {
+        position: relative;
+        bottom: 0px;
+    }
+    #login_btn {
+        position: relative;
+        bottom: 0px;
     }
 }
