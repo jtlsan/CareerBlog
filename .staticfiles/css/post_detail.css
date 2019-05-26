@@ -1,0 +1,75 @@
+
+#post_title {
+    box-sizing: border-box;
+    margin: 70px auto 0;
+    position: relative;
+    clear: both;
+    background-color: #F0F0F0;
+    height: auto;
+    width: 96%;
+    padding: 10px 20px 5px;
+    
+    border-radius : 5px;
+}
+#post_title h2{
+    margin: 5px 0 0;
+}
+#post_title p{
+    text-align: right;
+    margin: 5px auto 0;
+}
+#category {
+    text-align: left;
+    margin: 0;
+    background-color: seagreen;
+    color: black;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 3px 5px;
+}
+#post_content {
+    box-sizing: border-box;
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    padding: 5px 5px;
+    overflow: auto;
+}
+#buttons {
+    height: 40px;
+    width: 90%;
+    display: block;
+    margin: auto;
+    box-sizing: border-box;
+}
+#edit_button, #delete_button {
+    position: relative;
+    float: right;
+    padding: 5px 10px;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border: 1px solid #062B4B;
+    font-size: 0.8em;
+    font-family: 'Nanum Myeongjo', serif;
+    text-decoration: none;
+    display: inline-block;
+}
+#delete_button {
+    margin-left: 10px;
+}
+
+#buttons img{
+    width: 13px;
+    height: 13px;
+}
+@media only screen and (min-width:1024px) {
+    .wrapper {
+        width: 1024px;
+        display:block;
+        margin: auto;
+    }
+    #post_title {
+    }
+}
