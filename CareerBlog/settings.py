@@ -29,6 +29,8 @@ ALLOWED_HOSTS = [
     'localhost',
     '.us-east-2.compute.amazonaws.com',
     '.sankim96.com',
+    'blog.sankim96.com',
+    'www.blog.sankim96.com',
     ]
 
 
